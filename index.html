@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--Created by Tivotal-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Portfolio Website</title>
+
+    <!--font awesome(for icons)-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <!--css file-->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="#" class="logo">Portfolio.</a>
+      <ul>
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="bars-wrapper">
+      <div class="bar" style="--i: 6"></div>
+      <div class="bar" style="--i: 5"></div>
+      <div class="bar" style="--i: 4"></div>
+      <div class="bar" style="--i: 3"></div>
+      <div class="bar" style="--i: 2"></div>
+      <div class="bar" style="--i: 1"></div>
+    </div>
+
+    <section class="main">
+      <div class="main-info">
+        <h1>Emma Charlotte</h1>
+        <h2>
+          I'm a
+          <span style="--i: 4" data-text="Web developer">Web developer</span>
+          <span style="--i: 3" data-text="Youtuber">Youtuber</span>
+          <span style="--i: 2" data-text="Blogger">Blogger</span>
+          <span style="--i: 1" data-text="App developer">App developer</span>
+        </h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati
+          velit soluta laudantium eos cum dolores sunt id quaerat laborum
+          facere, quia pariatur vero nemo nihil tempora totam quasi sapiente
+          enim!
+        </p>
+        <div class="btn-wrapper">
+          <button class="btn">Download CV</button>
+          <div class="socials">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-img">
+        <div class="image-wrapper">
+          <div class="image">
+            <img src="img.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

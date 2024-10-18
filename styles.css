@@ -1,0 +1,260 @@
+/* Created by Tivotal */
+
+/* Google Fonts(Poppins) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #222;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 50px 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  animation: contAnim 1.5s linear forwards;
+  animation-delay: 1.2s;
+}
+
+@keyframes contAnim {
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+ul {
+  display: flex;
+}
+
+ul li {
+  list-style: none;
+  margin-left: 35px;
+}
+
+ul li a {
+  font-size: 20px;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+ul li:hover a,
+ul li.active a {
+  color: #7cf03d;
+}
+
+.main {
+  height: 100vh;
+  padding: 100px 9% 0;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  animation: contAnim 1.5s linear forwards;
+  animation-delay: 1.5s;
+}
+
+.main h1 {
+  font-size: 55px;
+}
+
+.main h2 {
+  font-size: 32px;
+  display: inline-block;
+}
+
+.main h2 span {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  -webkit-text-stroke: 0.7px #7cf03d;
+  animation: txtAnim 16s linear infinite;
+  animation-delay: calc(-4s * var(--i));
+}
+
+@keyframes txtAnim {
+  25%,
+  100% {
+    display: none;
+  }
+}
+
+.main h2 span::before {
+  position: absolute;
+  content: attr(data-text);
+  border-right: 2px solid #7cf03d;
+  color: #7cf03d;
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: txtBefAnim 4s linear infinite;
+}
+
+@keyframes txtBefAnim {
+  10%,
+  100% {
+    width: 0;
+  }
+  70%,
+  90% {
+    width: 100%;
+  }
+}
+
+.main p {
+  font-size: 16px;
+  margin: 10px 0 25px;
+}
+
+.btn-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 30px;
+  background: #7cf03d;
+  border: 2px solid #7cf03d;
+  border-radius: 40px;
+  box-shadow: 0 0 10px #7cf03d;
+  color: #1f242d;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  background: none;
+  color: #7cf03d;
+}
+
+.socials {
+  margin-left: 20px;
+}
+
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #7cf03d;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #7cf03d;
+  margin: 0 8px;
+  transition: 0.5s;
+}
+
+.socials a:hover {
+  background: #7cf03d;
+  color: #1f242d;
+  box-shadow: 0 0 10px #7cf03d;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 32vw;
+  height: 32vw;
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image-wrapper::before,
+.image-wrapper::after {
+  position: absolute;
+  content: "";
+  width: 500px;
+  height: 500px;
+  background: conic-gradient(transparent, transparent, transparent, #7cf03d);
+  transform: rotate(0deg);
+  animation: imgAnim 10s linear infinite;
+}
+
+.image-wrapper::after {
+  animation-delay: -5s;
+}
+
+@keyframes imgAnim {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #1f242d;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.image img {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 30px;
+  mix-blend-mode: lighten;
+}
+
+.bars-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: flex;
+}
+
+.bar {
+  width: 100%;
+  height: 100%;
+  background: #1f242d;
+  transform: translateY(-100%);
+  animation: barAnim 0.5s ease-in-out forwards;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes barAnim {
+  100% {
+    transform: translateY(0%);
+  }
+}
